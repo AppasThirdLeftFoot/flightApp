@@ -9,13 +9,15 @@
  */
 angular.module('flightAppApp')
   .controller('SearchCtrl', ['$scope', '$location', 'searchService', 'moment', function ($scope, $location, searchService, moment) {
-    /*jshint expr: true*/ 
+    /*jshint expr: true*/
     $scope.origin;
     $scope.destination;
     $scope.passengerCount;
     $scope.maxPrice;
 
     $scope.submit = function () {
+      /* submit function builds data object for service
+         and activates loading spinner*/
       $('.has-spinner').addClass('active');
       var data = {
         origin: $scope.origin,

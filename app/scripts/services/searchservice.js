@@ -26,19 +26,18 @@ angular.module('flightAppApp')
               }
             ],
             'passengers': {
-              'adultCount': data.passengerCount,
-              'infantInLapCount': 0,
-              'infantInSeatCount': 0,
-              'childCount': 0,
-              'seniorCount': 0
+              'adultCount': data.passengerCount
             },
+            /* Max solutions currently set to 5 until multiple tabs for results
+            page implemented*/
             'solutions': 5,
-            'maxPrice': data.maxPrice,
-            'refundable': false
+            'maxPrice': data.maxPrice
           }
         };
         flight.save({}, requestData).$promise.then(function(response){
           flights = response;
+
+          /*send user to results page*/
           go('/results');
         });
       }
