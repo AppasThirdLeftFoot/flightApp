@@ -9,6 +9,7 @@
  */
 angular.module('flightAppApp')
   .controller('SearchCtrl', ['$scope', '$location', 'searchService', 'moment', function ($scope, $location, searchService, moment) {
+    /*jshint expr: true*/ 
     $scope.origin;
     $scope.destination;
     $scope.passengerCount;
@@ -23,9 +24,9 @@ angular.module('flightAppApp')
         passengerCount: $scope.passengerCount,
         maxPrice: $scope.maxPrice
       };
-      // if (data !== undefined) {
-      //   searchService.submit(data);
-      // }
+      if (data !== undefined) {
+        searchService.submit(data);
+      }
     };
 
     $scope.today = function() {

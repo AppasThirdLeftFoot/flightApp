@@ -9,6 +9,7 @@
  */
 angular.module('flightAppApp')
   .controller('ResultsCtrl',[ '$scope', 'searchService', function ($scope, searchService) {
+    /*jshint expr: true*/ 
     $scope.flights = searchService.getFlights();
     $scope.flightOptions = $scope.flights.trips.tripOption;
     $scope.activeFlightInfo;
