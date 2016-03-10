@@ -3,14 +3,16 @@
   <ul>
     <p>{{flightOptions.length}} options were found.<p>
     <li ng-repeat="(flightIndex, flight) in flightOptions" style="list-style-type: none" ng-click="showInfo(flightIndex)">
-      <div class="row bg-primary">
-        <p><strong>Option#</strong>{{flightIndex + 1}}</p>
-        <p><strong>Sale Total:</strong> {{ flight.saleTotal }}</p>
-      </div>
-      <div class="row">
-        <p><strong>Start Date:</strong> {{ flight.slice[0].segment[0].leg[0].arrivalTime }}</p>
-        <p><strong>Arrival Date:</strong> {{ flight.slice[0].segment[flight.slice[0].segment.length - 1].leg[0].arrivalTime }}</p>
-        <p><strong>Number of Stops:</strong> {{ flight.slice[0].segment.length -1 }}</p>
+      <div class="flight-outer-wrapper">
+        <div class="row bg-primary">
+          <p><strong>Option#</strong>{{flightIndex + 1}}</p>
+          <p><strong>Sale Total:</strong> {{ flight.saleTotal }}</p>
+        </div>
+        <div class="row">
+          <p><strong>Start Date:</strong> {{ flight.slice[0].segment[0].leg[0].arrivalTime }}</p>
+          <p><strong>Arrival Date:</strong> {{ flight.slice[0].segment[flight.slice[0].segment.length - 1].leg[0].arrivalTime }}</p>
+          <p><strong>Number of Stops:</strong> {{ flight.slice[0].segment.length -1 }}</p>
+        </div>
       </div>
 
       <div class="flight-info bg-info"  ng-show="isShowingInfo(flightIndex)">

@@ -5,11 +5,17 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 .flight-list {
+  ul {
+    padding: 0;
+  }
   li {
     cursor: pointer;
     p {
       @include make-xs-column(12);
       @include make-sm-column(6);
+    }
+    .flight-outer-wrapper {
+      padding: 0 15px;
     }
     .flight-info {
       padding: 0 15px;
@@ -47,14 +53,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 /* Custom page header */
@@ -107,13 +105,6 @@ body {
     max-width: 730px;
   }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
